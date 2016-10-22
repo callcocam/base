@@ -1,0 +1,30 @@
+<!-- BEGIN MENUBAR-->
+<div id="menubar" class="menubar-inverse ">
+<div class="menubar-fixed-panel">
+    <div>
+        <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="expanded">
+        <a href="/admin">
+            <span class="text-lg text-bold text-primary ">SIGA-SMART&nbsp;ADMIN</span>
+        </a>
+    </div>
+</div>
+<div class="menubar-scroll-panel">
+<!-- BEGIN MAIN MENU -->
+<?php
+/* @var $container Zend\Navigation\Navigation */
+$this->MyNavigation()->render($this->container);
+?>
+<!-- END MAIN MENU -->
+
+<div class="menubar-foot-panel">
+    <small class="no-linebreak hidden-folded">
+        <span class="opacity-75">Copyright &copy; 2014</span> <strong>CodeCovers</strong>
+    </small>
+</div>
+</div><!--end .menubar-scroll-panel-->
+</div><!--end #menubar-->
+<!-- END MENUBAR -->

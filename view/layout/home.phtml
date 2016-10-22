@@ -1,0 +1,20 @@
+<?=$this->partial('/partial/home-top')?>
+<body id="app">
+      <?php //echo $this->partial('/home/home/tpl/theme-options') ?>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">Logo</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+         <li><a href="/" title="Pagina Inicial">HOME</a></li>
+        <li><a href="<?=$this->url('home/default',['controller'=>'home','action'=>'termos-de-uso'])?>" title="Termos De Uso">TERMOS DE USO</a></li>
+        <li><a href="<?=$this->url('home/default',['controller'=>'home','action'=>'politica-de-privacidade'])?>" title="Politica De Privacidade">POLITICA DE PRIVACIDADE</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+       <?= $this->content ?>
+      </div>
+ 
+ <?=$this->partial('/partial/home-button')?>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<?php echo $this->doctype() ?>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <?php echo$this->headTitle('ZF CALLCOCAM-ADMIN')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')->appendHttpEquiv('X-UA-Compatible', 'IE=edge');?>
+    <!-- Le styles -->
+    <?php echo$this->headLink(['rel' => 'shortcut icon', 'type' => '/assets_admin/image/vnd.microsoft.icon', 'href' => $this->basePath() . '/assets_admin/img/favicon.ico'])
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/style.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/pnotify.custom.min.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/libs/multi-select/multi-select.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/libs/select2/select2.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/material-design-iconic-font.min.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/font-awesome.min.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/libs/bootstrap-datepicker/datepicker3.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/libs/jquery-ui/jquery-ui-theme.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/materialadmin.css'))
+        ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/bootstrap.css'))
+        ->prependStylesheet('//fonts.googleapis.com/icon?family=Material+Icons')
+        //->prependStylesheet($this->basePath('/materialize_admin/css/materialize.css'))
+        ->prependStylesheet('//fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900');?>
+
+
+</head>
+<body id="app" class="menubar-hoverable header-fixed  menubar-first full-content ">
+<!-- BEGIN HEADER-->
+<header id="header" >
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand" >
+                    <div class="brand-holder">
+                        <a href="/admin">
+                            <span class="text-lg text-bold text-primary">MATERIAL ADMIN</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+
+            <ul class="header-nav header-nav-options">
+                <li>
+                    <!-- Search form -->
+                    <?=$this->Search()->search_basic();?>
+                </li>
+            </ul><!--end .header-nav-options -->
+
+            <?php echo $this->UserIdentity()->nav_user_top(['class'=>"header-nav header-nav-profile"],['class'=>"dropdown"]);?>
+            <ul class="header-nav header-nav-toggle">
+                <li>
+                    <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                </li>
+            </ul><!--end .header-nav-toggle -->
+        </div><!--end #header-navbar-collapse -->
+    </div>
+</header>
+<!-- BEGIN BASE-->
+<!-- BEGIN BASE-->
+<div id="base">
+
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas"></div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        <section>
+            <div class="section-header">
+                <?php echo $this->navigation('special')->breadcrumbs()->setPartial('partial/breadcrumb') // cool separator with newline
+                ?>
+            </div>
+            <?= $this->content ?>
+        </section>
+    </div>
+    <?= $this->navigation('special')->setAcl($this->UserIdentity()->getAuthAcl())
+        ->setRole((string)$this->UserIdentity()->getAuthAcl()->getRoleDefaul())
+        ->menu()->setUlClass('nav navbar-nav')->setPartial('partial/navbar-default');?>
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas"></div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+</div>
+<?= $this->inlineScript() ?>
+<!-- Scripts -->
+<?php echo $this->headScript()
+    //->prependFile($this->basePath('/assets_admin/js/vue.search.js'))
+    //->prependFile($this->basePath('/assets_admin/js/vue.min.js'))
+
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/demo/Demo.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppPrint.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppVendor.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppUpload.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppNavSearch.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppForm.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppCard.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppOffcanvas.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/AppNavigation.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/source/App.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/core/demo/notify.init.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/pnotify/pnotify.custom.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/sprintf/jquery.sprintf.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/jquery-form/jquery.form.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js'))
+    //->prependFile($this->basePath('/materialize_admin/assets/js/libs/multi-select/jquery.multi-select.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/bootstrap-datepicker/bootstrap-datepicker.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/select2/select2_locale_pt-BR.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/select2/select2.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/autosize/jquery.autosize.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/spin.js/spin.min.js'))
+    //->prependFile($this->basePath('/materialize_admin/assets/js/libs/jquery-ui/jquery-ui.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/bootstrap/bootstrap.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/js/materialize.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/js/jquery-3.1.0.min.js'))
+?>
+
+</body>
+</html>

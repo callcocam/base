@@ -1,0 +1,35 @@
+<?php echo $this->doctype() ?>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <?php echo$this->headTitle('TELA DE AUTENTICAÇÃO')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        <!-- Le styles -->
+        <?php echo$this->headLink(['rel' => 'shortcut icon', 'type' => '/assets_admin/image/vnd.microsoft.icon', 'href' => $this->basePath() . '/assets_admin/img/favicon.ico'])
+               ->prependStylesheet($this->basePath('/materialize_admin/assets/css/style.css?1421434286'))
+               ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/material-design-iconic-font.min.css?1421434286'))
+            ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/font-awesome.min.css?1422529194'))
+            ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/materialadmin.css?1425466319'))
+            ->prependStylesheet($this->basePath('/materialize_admin/assets/css/theme-default/bootstrap.css?1422792965'))
+            ->prependStylesheet('//fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900')
+        ?>
+        <!-- Scripts -->
+
+           </head>
+         <body class="menubar-hoverable header-fixed ">
+           <?= $this->content ?>
+          <?= $this->inlineScript() ?>
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('/auth_admin/js/AppForm.js'))
+            ->prependFile($this->basePath('/auth_admin/js/AppNavigation.js'))
+            ->prependFile($this->basePath('/auth_admin/js/App.js'))
+            ->prependFile($this->basePath('/auth_admin/js/materialize.min.js'))
+            ->prependFile($this->basePath('/auth_admin/js/jquery-3.1.0.min.js'))
+        ?>
+    </body>
+</html>

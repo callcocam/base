@@ -1,0 +1,66 @@
+   <section class="has-actions style-default-bright">
+       <!-- BEGIN INBOX -->
+       <div class="section-body">
+           <div class="row">
+               #message#
+               <!-- BEGIN INBOX NAV -->
+               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                     <ul class="nav nav-pills nav-stacked nav-icon hidden-xs">
+                       <li><small>REGISTROS</small></li>
+                       <li class="active"><a href="#url-ativo#"><span class="glyphicon glyphicon-inbox"></span>Ativos <small>(#count#)</small></a></li>
+                       <li><a href="#url-arquivado#"><span class="glyphicon glyphicon-paperclip"></span>Arquivados</a></li>
+                       <li><a href="#url-deletado#"><span class="glyphicon glyphicon-trash"></span>Deletados</a></li>
+                   </ul>
+               </div><!--end . -->
+               <!-- END INBOX NAV -->
+
+               <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+                   <div class="text-divider visible-xs"><span>Email list</span></div>
+                   <div class="row">
+
+                       <!-- BEGIN INBOX EMAIL LIST -->
+                       <div class="col-xs-12 col-md-7 col-lg-6 height-6 scroll-sm">
+                           <ul class="list">
+                               #blocks#
+                           </ul>
+
+                       </div><!--end .col -->
+                       <!-- END INBOX EMAIL LIST -->
+
+                       <!-- BEGIN EMAIL CONTENT -->
+                       <div class="col-xs-12 col-md-5 col-lg-6 hidden-xs">
+                          <div class="text-divider hidden-md hidden-lg"><span>Email</span></div>
+                          <h1 class="no-margin">DETALHES DO CADASTRO</h1>
+                           <div class="btn-group stick-top-right">
+                               <a id="btn-print-item" href="#" class="btn btn-icon-toggle disabled"><i class="md md-print"></i></a>
+                           </div>
+                          <hr/>
+                           <div class="col-lg-12" id="detalhe">
+
+
+                           </div>
+
+                       </div><!--end .col -->
+                       <!-- END EMAIL CONTENT -->
+
+                   </div><!--end .row -->
+               </div><!--end .col -->
+           </div><!--end .row -->
+       </div><!--end .section-body -->
+       <!-- END INBOX -->
+
+       <!-- BEGIN SECTION ACTION -->
+       <div class="section-action style-primary">
+           <div class="section-action-row" style="margin-top: -20px;">
+               #paginator#
+           </div>
+           <div class="section-floating-action-row">
+               #btn-print#
+               <a class="btn ink-reaction btn-floating-action btn-lg btn-accent" href="#add#" data-toggle="tooltip" data-placement="top" data-original-title="Cadastrar Novo">
+                   <i class="md md-add"></i>
+               </a>
+           </div>
+       </div><!--end .section-action -->
+       <!-- END SECTION ACTION -->
+
+   </section>

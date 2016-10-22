@@ -1,0 +1,107 @@
+<?php echo $this->doctype() ?>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <?php echo$this->headTitle('ZF PRINT')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')->appendHttpEquiv('X-UA-Compatible', 'IE=edge');?>
+    <style>
+        /*RESET*/
+        *, *:before, *:after{
+            margin: 0;
+            padding: 0;
+            outline: 0;
+
+            font-size: 1em;
+            font-weight: normal;
+
+            line-height: 1.2;
+            letter-spacing: 0em;
+            vertical-align: middle;
+
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+
+        }
+        .designacao{
+            width: 100%;
+            padding: 10px;
+            float: left;
+        }
+
+        .designacao tr{
+            text-align: left;
+            padding: 3px 0;
+        }
+        .designacao tr th{
+            padding: 2px 0;
+        }
+        .designacao tr td{
+            padding: 3px 0;
+        }
+
+        .designacao .title{
+            font-size: 1em;
+            font-weight: 600;
+            color: #333333;
+            text-align: center;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 10px;
+        }
+
+        .designacao .subtitle{
+            font-size: 0.7em;
+            font-weight: bold;
+            color: #333333;
+            text-align: left;
+            min-width: 50px;
+        }
+        .designacao label{
+            font-size: 0.6em;
+            text-align: left;
+        }
+
+
+        .check{
+            padding:1px 2px;
+            margin-right: 5px;
+            margin-left: 10px;
+            border: 1px #000000 solid;
+            font-size: 0.8em;
+        }
+        .designacao .data-designacao{
+          font-weight: normal;
+          font-size: 0.6em;
+            text-align: center;
+            border-bottom: solid #000000 1px;
+        }
+
+        .designacao .designacao-obs{
+            font-size: 0.6em;
+            padding: 6px 10px;
+        }
+    </style>
+
+
+</head>
+<body id="app">
+<?=$this->content ?>
+<?= $this->inlineScript() ?>
+<!-- Scripts -->
+<?php echo $this->headScript()
+    ->prependFile($this->basePath('/materialize_admin/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js'))
+    ->prependFile($this->basePath('/materialize_admin/js/jquery-3.1.0.min.js'))
+?>
+<script>
+    $(function(){
+        // =========================================================================
+        // RADIO AND CHECKBOX LISTENERS
+        // =========================================================================
+
+            // Add a span class the styled checkboxes and radio buttons for correct styling
+
+
+    })
+</script>
+</body>
+</html>
